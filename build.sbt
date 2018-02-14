@@ -1,3 +1,5 @@
+import sbt.CrossVersion
+
 name := "ESMonad"
 
 version := "0.1"
@@ -16,8 +18,17 @@ lazy val root = (project in file(".")).settings(
   scalacOptions += "-language:postfixOps",
   scalacOptions += "-language:higherKinds",
   scalacOptions += "-Ypartial-unification",
-  libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.3" % Test,
-  libraryDependencies += "org.typelevel" %% "cats-core" % "1.0.1",
-  libraryDependencies += "org.typelevel" %% "cats-free" % "1.0.1",
-  addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.4")
+  libraryDependencies ++= Seq(
+    "com.github.mpilquist" %% "simulacrum" % "0.11.0",
+    "com.chuusai" %% "shapeless" % "2.3.3",
+    "com.fommil" %% "deriving-macro" % "0.9.0",
+    "org.apache.commons" % "commons-lang3" % "3.0",
+    "org.typelevel" %% "cats-core" % "1.0.1",
+    "org.typelevel" %% "cats-free" % "1.0.1",
+    "org.scalatest" %% "scalatest" % "3.0.3" % Test
+  ),
+  addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.4"),
+  addCompilerPlugin(
+    "org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full
+  )
 )
