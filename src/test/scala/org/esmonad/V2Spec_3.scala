@@ -1,0 +1,27 @@
+package org.esmonad
+
+import org.scalatest._
+
+/**
+  * This is an example of some sugar on creating the handler (not visible here)
+  */
+class V2Spec_3 extends FlatSpec with Matchers {
+
+  "The V2_3 object" should "be valid" in {
+    import org.esmonad.V2_3._
+    val events = Seq(
+      Create("123", Position.zero, North),
+      Walk("123", 1),
+      Turn("123", ToRight),
+      Walk("123", 1),
+      Turn("123", ToRight),
+      Walk("123", 2),
+      Turn("123", ToRight),
+      Walk("123", 2)
+    )
+    val finalState = events.foldLeft(Option.empty[Turtle])(Turtle.handler)
+    finalState shouldBe Some(Turtle("123", Position(-1, -1), West))
+
+  }
+
+}
