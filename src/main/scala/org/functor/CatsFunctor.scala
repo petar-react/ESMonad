@@ -3,11 +3,12 @@ package org.functor
 import cats.Functor
 import cats.instances.list._
 import cats.instances.option._
+import cats.Functor.ops._
 
 import scala.concurrent.ExecutionContext.Implicits._
 import scala.concurrent.duration._
 import scala.concurrent.{Await, Future}
-import scala.language.{higherKinds, postfixOps}
+//import scala.language.{higherKinds, postfixOps}
 
 object CatsFunctor extends App {
 
