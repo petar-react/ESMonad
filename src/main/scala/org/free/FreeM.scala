@@ -35,7 +35,7 @@ object FreeM extends App {
   // ~> natural transformation
   import cats.{Id, ~>}
 
-  object ServicePrinter extends (Service ~> Id) {
+  object ServicePrinter extends (Service ~> Id) { self =>
     def apply[A](fa: Service[A]): Id[A] = fa match {
 
       case GetUserName(userId) =>

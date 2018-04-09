@@ -69,6 +69,7 @@ class FreeMonad extends FunSuite {
           "Test"
 
         case GetUserPhoto(userId) =>
+
           " ◉︵◉ "
 
       }
@@ -96,8 +97,8 @@ class FreeMonad extends FunSuite {
           Future("Test")
 
         case GetUserPhoto(userId) =>
-          Future(" (°~°) ")
 
+          Future(" (°~°) ")
       }
     }
 
