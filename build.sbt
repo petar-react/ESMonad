@@ -27,6 +27,9 @@ lazy val root = (project in file(".")).settings(
     "org.typelevel" %% "cats-free" % "1.0.1",
     "io.monix" %% "monix" % "3.0.0-RC1",
     "org.redisson" % "redisson" % "3.6.4",
+    "com.typesafe.slick" %% "slick" % "3.2.2",
+    "com.h2database" % "h2" % "1.4.185",
+    "ch.qos.logback" % "logback-classic" % "1.2.3",
     "org.scalatest" %% "scalatest" % "3.0.3" % Test
   ),
   addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.4"),
